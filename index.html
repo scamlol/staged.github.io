@@ -46,48 +46,7 @@
     }
   }
 
-  /* Splash overlay */
-  #splash {
-    position: fixed;
-    top: 1.8rem; /* below marquee */
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 1.8rem);
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    cursor: pointer;
-  }
-  #splash img {
-    max-width: 80vw;
-    max-height: 80vh;
-    border: 3px solid #fff;
-    border-radius: 8px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-  }
-  #splash img:hover {
-    filter: none;
-  }
 
-  /* Hide main content initially */
-  #main-content {
-    display: none;
-    position: fixed;
-    top: 5.3rem; /* below marquee + header */
-    bottom: 0; left: 0; right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
-  #main-inner {
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-  }
 
   /* Fixed header */
   header {
