@@ -1,123 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fuck scammers</title>
-<style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  html, body {
-    height: 100%;
-    font-family: monospace, monospace;
-    background: #000;
-    color: #fff;
-    user-select: none;
-  }
-
-  /* Marquee container */
-  #marquee-container {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    height: 1.8rem;
-    background: #111;
-    overflow: hidden;
-    border-bottom: 1px solid #fff;
-    z-index: 10001;
-  }
-  #marquee-text {
-    display: inline-block;
-    white-space: nowrap;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    padding-left: 100%;
-    animation: marquee 12s linear infinite;
-    letter-spacing: 0.1em;
-  }
-  @keyframes marquee {
-    from {
-      transform: translateX(0%);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fuck scammers</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-      transform: translateX(-100%);
+    html, body {
+      height: 100%;
+      font-family: monospace, monospace;
+      background: #000;
+      color: #fff;
+      user-select: none;
     }
-  }
 
+    /* Marquee container */
+    #marquee-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 1.8rem;
+      background: #111;
+      overflow: hidden;
+      border-bottom: 1px solid #fff;
+      z-index: 10001;
+    }
+    #marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      padding-left: 100%;
+      animation: marquee 12s linear infinite;
+      letter-spacing: 0.1em;
+    }
+    @keyframes marquee {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
 
+    /* Fixed header */
+    header {
+      position: fixed;
+      top: 1.8rem; /* below marquee */
+      left: 0; width: 100%;
+      height: 3.5rem;
+      background: #000;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      user-select: none;
+      z-index: 9999;
+    }
 
-  /* Fixed header */
-  header {
-    position: fixed;
-    top: 1.8rem; /* below marquee */
-    left: 0; width: 100%;
-    height: 3.5rem;
-    background: #000;
-    border-bottom: 1px solid #fff;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    user-select: none;
-    z-index: 9999;
-  }
+    /* Main content */
+    #main-content {
+      display: flex;
+      padding-top: 6.5rem; /* Space for header + marquee */
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
 
-  h1, h2 {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin: 1.5rem 0 1rem;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.2rem;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 0.25rem;
-  }
+    #main-inner {
+      max-width: 800px;
+      padding: 1rem;
+    }
 
-  .section {
-    margin-bottom: 2rem;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 1.3;
-  }
+    h1, h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin: 1.5rem 0 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 0.25rem;
+    }
 
-  /* Photos container */
-  .photos {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .photos img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-  }
-  .photos img:hover {
-    filter: none;
-  }
+    .section {
+      margin-bottom: 2rem;
+    }
 
-  /* Responsive */
-  @media(max-width: 500px) {
+    p {
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    /* Photos */
+    .photos {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
     .photos img {
-      width: 100px;
-      height: 100px;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
     }
-  }
-</style>
+    .photos img:hover {
+      filter: none;
+    }
+
+    /* Responsive */
+    @media(max-width: 500px) {
+      .photos img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -126,14 +143,10 @@
     <div id="marquee-text">TODAY'S PICK: rinjoix.com Phishing, Fake Online Store &nbsp;&nbsp;&nbsp;&nbsp;</div>
   </div>
 
-  <!-- Splash Screen -->
-  <div id="splash" title="Click to Enter">
-    <img src="https://i.imgur.com/1H2XbDr.png" alt="ALL OF SHAME - Click to Enter" />
-  </div>
-
-  <!-- Main Content -->
+  <!-- Header -->
   <header>ALL OF SHAME</header>
 
+  <!-- Main Content -->
   <div id="main-content">
     <div id="main-inner">
       <h1>Doxxed by staged!</h1>
@@ -147,8 +160,9 @@
 
       <div class="section" id="scammer">
         <h2>LOCATION: Nigeria, Lagos (Ikoyi)</h2>
-        <p>HIS PHONE: IPhone XR</p>
-        <p>HIS MONEY MULE INFOS: Deshawn Currie CASHAPP: $deenyc1000</p>
+        <p>HIS PHONE: iPhone XR</p>
+        <p>HIS MONEY MULE INFOS: Deshawn Currie &mdash; CASHAPP: $deenyc1000</p>
+        <p>HIS MONEY MULE'S CAR AND LICENSE: FORD ESCAPE — CHJ-6200 — NORTH CAROLINA</p>
       </div>
 
       <div class="section" id="photos">
@@ -161,16 +175,6 @@
       </div>
     </div>
   </div>
-
-<script>
-  const splash = document.getElementById('splash');
-  const mainContent = document.getElementById('main-content');
-
-  splash.addEventListener('click', () => {
-    splash.style.display = 'none';
-    mainContent.style.display = 'flex';
-  });
-</script>
 
 </body>
 </html>
